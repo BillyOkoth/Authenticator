@@ -1,0 +1,579 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		013CED3743DE9A290671ADBFAECE55B4 /* TOTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A24AFC8795F53B4ACBD6E9130E9CC1 /* TOTP.swift */; };
+		030EEED5CF3D9D5B3C12A0BD27041B78 /* OTPAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F4550763FADC42932CAAE90941DFCE /* OTPAlgorithm.swift */; };
+		18ECF9E6AB1F5271F11C02AE66FA2257 /* Base32.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997F7E560E89EB53CA45E0A2A9024F1E /* Base32.swift */; };
+		1EAA26A7AB1DAB860EC558E2483F953F /* Pods-Authenticator-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EB7938BA394FE2062DD8FD0D619C16C4 /* Pods-Authenticator-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		78476F4097EFD73497146E9FC3C076E1 /* SwiftOTP-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F63963870BA530F6986907D77D10EE /* SwiftOTP-dummy.m */; };
+		93885F437A8C974E7CFA8F0D6FF49182 /* UInt64+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122CA2E56F4DB69E178E401F2AB05C9C /* UInt64+Data.swift */; };
+		ACDC00707CC17E1142DC2AED970A9EE0 /* HOTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF25E74567DC80B1C2211F855C1FE741 /* HOTP.swift */; };
+		B23C7423A0DBD628041CB70EAA337EFD /* Data+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724719485373373970A4FF9DA286CC93 /* Data+Utilities.swift */; };
+		CB7ECC1173A5A4E14CD29B80471A4E6A /* SwiftOTP.h in Headers */ = {isa = PBXBuildFile; fileRef = 3961CD08F1D681ECB20EFC4A3D3568B1 /* SwiftOTP.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D52CD77CAE96EE3EA44FC350C18ECA83 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC133A93A8CCB25360E8CBFEACBF6894 /* StringExtension.swift */; };
+		D78D96DDD23979E5E6DFAACCABB19ED7 /* SwiftOTP-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 30345074948C57BEC67C99CB6AF3F817 /* SwiftOTP-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		E6C4729597A01D8C8E661932AA59E62F /* Pods-Authenticator-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F2CAE785733A356F3F3EECF4E6C568A /* Pods-Authenticator-dummy.m */; };
+		F6DDA4319C3162D74C7D1FFDE435C280 /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661204BBB56C9685D829E45FCEC764EA /* Generator.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6EA36E95FBE8210DDE7D728093461DD9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 58B9AD85FE03CF119B42720114874474;
+			remoteInfo = SwiftOTP;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0091D585DA062D0150B4D9EF4302104B /* SwiftOTP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftOTP.debug.xcconfig; sourceTree = "<group>"; };
+		122CA2E56F4DB69E178E401F2AB05C9C /* UInt64+Data.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UInt64+Data.swift"; path = "SwiftOTP/UInt64+Data.swift"; sourceTree = "<group>"; };
+		14A24AFC8795F53B4ACBD6E9130E9CC1 /* TOTP.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TOTP.swift; path = SwiftOTP/TOTP.swift; sourceTree = "<group>"; };
+		14A83F30915EBF5635552339E861D0F2 /* Pods-Authenticator.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Authenticator.modulemap"; sourceTree = "<group>"; };
+		2F2CAE785733A356F3F3EECF4E6C568A /* Pods-Authenticator-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Authenticator-dummy.m"; sourceTree = "<group>"; };
+		30345074948C57BEC67C99CB6AF3F817 /* SwiftOTP-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftOTP-umbrella.h"; sourceTree = "<group>"; };
+		350D25AC3F86FEB41628E3409C41AE26 /* Pods-Authenticator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Authenticator.debug.xcconfig"; sourceTree = "<group>"; };
+		3961CD08F1D681ECB20EFC4A3D3568B1 /* SwiftOTP.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SwiftOTP.h; path = SwiftOTP/SwiftOTP.h; sourceTree = "<group>"; };
+		47F63963870BA530F6986907D77D10EE /* SwiftOTP-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftOTP-dummy.m"; sourceTree = "<group>"; };
+		4DC0A8FF98359E0793779860CBB234D5 /* Pods-Authenticator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Authenticator.release.xcconfig"; sourceTree = "<group>"; };
+		50F81942B51A2D5CCB4F7536BBAE3D9E /* Pods-Authenticator */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "Pods-Authenticator"; path = "libPods-Authenticator.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		661204BBB56C9685D829E45FCEC764EA /* Generator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Generator.swift; path = SwiftOTP/Generator.swift; sourceTree = "<group>"; };
+		724719485373373970A4FF9DA286CC93 /* Data+Utilities.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Data+Utilities.swift"; path = "SwiftOTP/Data+Utilities.swift"; sourceTree = "<group>"; };
+		906B4F8881E1F47CA253F59EDEBDC66C /* SwiftOTP */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = SwiftOTP; path = libSwiftOTP.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		95728FFD239E6086459540C5F9CBE46D /* SwiftOTP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftOTP.release.xcconfig; sourceTree = "<group>"; };
+		997F7E560E89EB53CA45E0A2A9024F1E /* Base32.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Base32.swift; path = SwiftOTP/Base32/Base32.swift; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A34B99CD63ADB78FC96697D3E55BFB68 /* SwiftOTP.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftOTP.modulemap; sourceTree = "<group>"; };
+		AC133A93A8CCB25360E8CBFEACBF6894 /* StringExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StringExtension.swift; path = SwiftOTP/Base32/StringExtension.swift; sourceTree = "<group>"; };
+		C0F4550763FADC42932CAAE90941DFCE /* OTPAlgorithm.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OTPAlgorithm.swift; path = SwiftOTP/OTPAlgorithm.swift; sourceTree = "<group>"; };
+		C8A555F2C2CD3B31C33477A4F1AD6B18 /* Pods-Authenticator-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Authenticator-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E373DF9C064BB46A4CB46BF74A6EF9D4 /* SwiftOTP-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftOTP-prefix.pch"; sourceTree = "<group>"; };
+		EB7938BA394FE2062DD8FD0D619C16C4 /* Pods-Authenticator-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Authenticator-umbrella.h"; sourceTree = "<group>"; };
+		F93A62F5CFFE35698211D409FEF6DE6F /* Pods-Authenticator-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Authenticator-acknowledgements.plist"; sourceTree = "<group>"; };
+		FF25E74567DC80B1C2211F855C1FE741 /* HOTP.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HOTP.swift; path = SwiftOTP/HOTP.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84ABC68943E5841485728BABA8DCCF9B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEA4C7A2D7309F6B5E92869F7043E98A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		11A5E54BC396BA5F5CD7B7E7D155E9A3 /* SwiftOTP */ = {
+			isa = PBXGroup;
+			children = (
+				997F7E560E89EB53CA45E0A2A9024F1E /* Base32.swift */,
+				724719485373373970A4FF9DA286CC93 /* Data+Utilities.swift */,
+				661204BBB56C9685D829E45FCEC764EA /* Generator.swift */,
+				FF25E74567DC80B1C2211F855C1FE741 /* HOTP.swift */,
+				C0F4550763FADC42932CAAE90941DFCE /* OTPAlgorithm.swift */,
+				AC133A93A8CCB25360E8CBFEACBF6894 /* StringExtension.swift */,
+				3961CD08F1D681ECB20EFC4A3D3568B1 /* SwiftOTP.h */,
+				14A24AFC8795F53B4ACBD6E9130E9CC1 /* TOTP.swift */,
+				122CA2E56F4DB69E178E401F2AB05C9C /* UInt64+Data.swift */,
+				EE3EC0187578F1A4750B855412B20B5A /* Support Files */,
+			);
+			name = SwiftOTP;
+			path = SwiftOTP;
+			sourceTree = "<group>";
+		};
+		68992702C3B1A9A1BDD67899672C222B /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D46A5CC4F317EBA5F4E922E30693925B /* Pods-Authenticator */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		AA6635EB68B80D355C1090A988A28765 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				50F81942B51A2D5CCB4F7536BBAE3D9E /* Pods-Authenticator */,
+				906B4F8881E1F47CA253F59EDEBDC66C /* SwiftOTP */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C5654BCA029E1B8E097BBF69CB99CBD3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				11A5E54BC396BA5F5CD7B7E7D155E9A3 /* SwiftOTP */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D89477F20FB1DE18A04690586D7808C4 /* Frameworks */,
+				C5654BCA029E1B8E097BBF69CB99CBD3 /* Pods */,
+				AA6635EB68B80D355C1090A988A28765 /* Products */,
+				68992702C3B1A9A1BDD67899672C222B /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D46A5CC4F317EBA5F4E922E30693925B /* Pods-Authenticator */ = {
+			isa = PBXGroup;
+			children = (
+				14A83F30915EBF5635552339E861D0F2 /* Pods-Authenticator.modulemap */,
+				C8A555F2C2CD3B31C33477A4F1AD6B18 /* Pods-Authenticator-acknowledgements.markdown */,
+				F93A62F5CFFE35698211D409FEF6DE6F /* Pods-Authenticator-acknowledgements.plist */,
+				2F2CAE785733A356F3F3EECF4E6C568A /* Pods-Authenticator-dummy.m */,
+				EB7938BA394FE2062DD8FD0D619C16C4 /* Pods-Authenticator-umbrella.h */,
+				350D25AC3F86FEB41628E3409C41AE26 /* Pods-Authenticator.debug.xcconfig */,
+				4DC0A8FF98359E0793779860CBB234D5 /* Pods-Authenticator.release.xcconfig */,
+			);
+			name = "Pods-Authenticator";
+			path = "Target Support Files/Pods-Authenticator";
+			sourceTree = "<group>";
+		};
+		D89477F20FB1DE18A04690586D7808C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EE3EC0187578F1A4750B855412B20B5A /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A34B99CD63ADB78FC96697D3E55BFB68 /* SwiftOTP.modulemap */,
+				47F63963870BA530F6986907D77D10EE /* SwiftOTP-dummy.m */,
+				E373DF9C064BB46A4CB46BF74A6EF9D4 /* SwiftOTP-prefix.pch */,
+				30345074948C57BEC67C99CB6AF3F817 /* SwiftOTP-umbrella.h */,
+				0091D585DA062D0150B4D9EF4302104B /* SwiftOTP.debug.xcconfig */,
+				95728FFD239E6086459540C5F9CBE46D /* SwiftOTP.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftOTP";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		5074644180EE5B3320A4D4AA3E590F68 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB7ECC1173A5A4E14CD29B80471A4E6A /* SwiftOTP.h in Headers */,
+				D78D96DDD23979E5E6DFAACCABB19ED7 /* SwiftOTP-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A15E56A002BB2C5E52E07A4CCEA554F4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EAA26A7AB1DAB860EC558E2483F953F /* Pods-Authenticator-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		58B9AD85FE03CF119B42720114874474 /* SwiftOTP */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8F216B787C59144D751E8A6EBBDA7973 /* Build configuration list for PBXNativeTarget "SwiftOTP" */;
+			buildPhases = (
+				5074644180EE5B3320A4D4AA3E590F68 /* Headers */,
+				4EE08D570A92E1F951E93F44F68998E8 /* Sources */,
+				84ABC68943E5841485728BABA8DCCF9B /* Frameworks */,
+				60CFE21EDFFE52A32D8456FB11BF333D /* Copy generated compatibility header */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftOTP;
+			productName = SwiftOTP;
+			productReference = 906B4F8881E1F47CA253F59EDEBDC66C /* SwiftOTP */;
+			productType = "com.apple.product-type.library.static";
+		};
+		F26C0BD6713BF4D4E51E026FC8E0B09B /* Pods-Authenticator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 36D122767588372BE918A7FE532994C2 /* Build configuration list for PBXNativeTarget "Pods-Authenticator" */;
+			buildPhases = (
+				A15E56A002BB2C5E52E07A4CCEA554F4 /* Headers */,
+				9CBFC9FFE22EAA623529E7A0CBB2DAA7 /* Sources */,
+				EEA4C7A2D7309F6B5E92869F7043E98A /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B2C034E5E24E113465DAED8187302712 /* PBXTargetDependency */,
+			);
+			name = "Pods-Authenticator";
+			productName = "Pods-Authenticator";
+			productReference = 50F81942B51A2D5CCB4F7536BBAE3D9E /* Pods-Authenticator */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = AA6635EB68B80D355C1090A988A28765 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F26C0BD6713BF4D4E51E026FC8E0B09B /* Pods-Authenticator */,
+				58B9AD85FE03CF119B42720114874474 /* SwiftOTP */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		60CFE21EDFFE52A32D8456FB11BF333D /* Copy generated compatibility header */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h",
+				"${PODS_ROOT}/Headers/Public/SwiftOTP/SwiftOTP.modulemap",
+				"${PODS_ROOT}/Headers/Public/SwiftOTP/SwiftOTP-umbrella.h",
+			);
+			name = "Copy generated compatibility header";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap",
+				"${BUILT_PRODUCTS_DIR}/SwiftOTP-umbrella.h",
+				"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "COMPATIBILITY_HEADER_PATH=\"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h\"\nMODULE_MAP_PATH=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap\"\n\nditto \"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h\" \"${COMPATIBILITY_HEADER_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/SwiftOTP/SwiftOTP.modulemap\" \"${MODULE_MAP_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/SwiftOTP/SwiftOTP-umbrella.h\" \"${BUILT_PRODUCTS_DIR}\"\nprintf \"\\n\\nmodule ${PRODUCT_MODULE_NAME}.Swift {\\n  header \\\"${COMPATIBILITY_HEADER_PATH}\\\"\\n  requires objc\\n}\\n\" >> \"${MODULE_MAP_PATH}\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4EE08D570A92E1F951E93F44F68998E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18ECF9E6AB1F5271F11C02AE66FA2257 /* Base32.swift in Sources */,
+				B23C7423A0DBD628041CB70EAA337EFD /* Data+Utilities.swift in Sources */,
+				F6DDA4319C3162D74C7D1FFDE435C280 /* Generator.swift in Sources */,
+				ACDC00707CC17E1142DC2AED970A9EE0 /* HOTP.swift in Sources */,
+				030EEED5CF3D9D5B3C12A0BD27041B78 /* OTPAlgorithm.swift in Sources */,
+				D52CD77CAE96EE3EA44FC350C18ECA83 /* StringExtension.swift in Sources */,
+				78476F4097EFD73497146E9FC3C076E1 /* SwiftOTP-dummy.m in Sources */,
+				013CED3743DE9A290671ADBFAECE55B4 /* TOTP.swift in Sources */,
+				93885F437A8C974E7CFA8F0D6FF49182 /* UInt64+Data.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CBFC9FFE22EAA623529E7A0CBB2DAA7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6C4729597A01D8C8E661932AA59E62F /* Pods-Authenticator-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B2C034E5E24E113465DAED8187302712 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftOTP;
+			target = 58B9AD85FE03CF119B42720114874474 /* SwiftOTP */;
+			targetProxy = 6EA36E95FBE8210DDE7D728093461DD9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0CA774D4A48CE2829E1533349A3F0D53 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 350D25AC3F86FEB41628E3409C41AE26 /* Pods-Authenticator.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Authenticator/Pods-Authenticator.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		119D25BC8590F02A997CE3B28DA2EFA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		44FB9D9E45AFCEF35BDE3EDBD2B8B098 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95728FFD239E6086459540C5F9CBE46D /* SwiftOTP.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftOTP/SwiftOTP-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MODULEMAP_FILE = Headers/Public/SwiftOTP/SwiftOTP.modulemap;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = SwiftOTP;
+				PRODUCT_NAME = SwiftOTP;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6F4225877C794ABEB78776F47754104E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		9D9BFAE10CA76AC3F7C054500F522774 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DC0A8FF98359E0793779860CBB234D5 /* Pods-Authenticator.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Authenticator/Pods-Authenticator.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F9AD9205EB393D9C2F6F003C5777E771 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0091D585DA062D0150B4D9EF4302104B /* SwiftOTP.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftOTP/SwiftOTP-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MODULEMAP_FILE = Headers/Public/SwiftOTP/SwiftOTP.modulemap;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = SwiftOTP;
+				PRODUCT_NAME = SwiftOTP;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		36D122767588372BE918A7FE532994C2 /* Build configuration list for PBXNativeTarget "Pods-Authenticator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0CA774D4A48CE2829E1533349A3F0D53 /* Debug */,
+				9D9BFAE10CA76AC3F7C054500F522774 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				119D25BC8590F02A997CE3B28DA2EFA5 /* Debug */,
+				6F4225877C794ABEB78776F47754104E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8F216B787C59144D751E8A6EBBDA7973 /* Build configuration list for PBXNativeTarget "SwiftOTP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9AD9205EB393D9C2F6F003C5777E771 /* Debug */,
+				44FB9D9E45AFCEF35BDE3EDBD2B8B098 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

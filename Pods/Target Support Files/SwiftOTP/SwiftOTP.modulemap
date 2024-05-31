@@ -1,0 +1,6 @@
+module SwiftOTP {
+  umbrella header "SwiftOTP-umbrella.h"
+
+  export *
+  module * { export * }
+}
