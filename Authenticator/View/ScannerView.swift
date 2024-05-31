@@ -47,6 +47,10 @@ struct ScannerView: View {
             Text("Scanning will start automatically")
                 .font(.callout)
                 .foregroundColor(.gray)
+            
+            Text("Scanned Code is" + scannedCode  )
+                .font(.title)
+                .foregroundColor(.red)
             Spacer(minLength: 0)
             ///Qr code scannes
             
