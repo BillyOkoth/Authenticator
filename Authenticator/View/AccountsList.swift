@@ -10,10 +10,15 @@ import AVKit
 import SwiftOTP
 
 struct AccountsList: View {
-    @State private var timer:CGFloat = 30
     @State private var addAccount:Bool = false
     @State private var count:Int = 0
     @State private var codeInt:Int = 345679
+    @State private var remainingTime = 30 // Countdown time in seconds
+    @State private var timer: Timer? = nil
+    
+    
+
+    
     var body: some View {
       NavigationStack {
             ScrollView(.vertical) {
@@ -30,44 +35,30 @@ struct AccountsList: View {
             .background(.gray.opacity(0.15))
             .scrollIndicators(.hidden)
         }
-                .overlay(alignment: .bottomTrailing, content: {
-                    Button(action: {
-                        addAccount.toggle()
-                    }, label: {
-                       Image(systemName: "plus")
-                            .fontWeight(.semibold)
-                            .foregroundStyle(
-                                .linearGradient(
-                                    colors: [.white],
-                                            startPoint: .top,
-                                            endPoint: .bottom
-                                        ))
-                            .frame(width: 55, height:55)
-                            .background(.gray.opacity(0.85).shadow(.drop(color: .black.opacity(0.75), radius: 5, x: 10, y: 10)), in: .circle)
-                    })
-                    .padding(15)
-                })
-                .overlay(alignment: .bottomLeading, content: {
-                    Button(action: {
-                        addAccount.toggle()
-                    },
-                           label: {
-                        
-                       Image(systemName: "qrcode")
-                            .fontWeight(.semibold)
-                            .foregroundStyle(
-                                .linearGradient(
-                                    colors: [.white],
-                                            startPoint: .top,
-                                            endPoint: .bottom
-                                        ))
-                            .frame(width: 55, height:55)
-                            .background(.gray.opacity(0.85).shadow(.drop(color: .black.opacity(0.75), radius: 5, x: 10, y: 10)), in: .circle)
-                    })
-                    .padding(15)
-                })
-                
-                .sheet(isPresented: $addAccount, content: {
+      .overlay(alignment: .bottomTrailing) {
+          FloatingButton {
+              FloatingAction(symbol: "qrcode") {
+                  addAccount.toggle()
+              }
+          }label: { isExpanded in
+              Image(systemName: "plus")
+                  .font(.title3)
+                  .fontWeight(.semibold)
+                  .foregroundStyle(
+                    .linearGradient(
+                     colors: [.white],
+                             startPoint: .top,
+                             endPoint: .bottom
+                         ))
+                  .rotationEffect(.init(degrees: isExpanded ? 45: 0))
+                  .scaleEffect(1.02)
+                  .frame( maxWidth: .infinity, maxHeight:.infinity)
+                  .background(.black, in: .circle)
+                //scaling effect when it is expanded
+                  .scaleEffect(isExpanded ? 0.9 : 1)
+          }.padding()
+      }
+      .sheet(isPresented: $addAccount, content: {
                             ScannerView()
                                 .presentationDetents([.height(800)])
                                 .interactiveDismissDisabled()
@@ -75,8 +66,29 @@ struct AccountsList: View {
                                 .presentationBackground(.white)
         
                         })
+        
+       
     }
-    
+    func startTimer() {
+         generateNewCodes()
+            self.stopTimer() // Stop any existing timer
+            self.remainingTime = 30 // Reset the countdown time
+            self.timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+                if self.remainingTime > 0 {
+                    self.remainingTime -= 1
+                } else {
+                    self.stopTimer()
+                    generateNewCodes()
+                    self.startTimer() // Restart the timer
+                }
+            }
+      
+        }
+
+        func stopTimer() {
+            self.timer?.invalidate()
+            self.timer = nil
+        }
     @ViewBuilder
     func ListView () -> some View {
         VStack {
@@ -94,9 +106,7 @@ struct AccountsList: View {
                                             startPoint: .top,
                                             endPoint: .bottom
                                         )
-                                
                             )
-                            
                     }
                     .hSpacing(.leading)
                     .vSpacing(.bottom)
@@ -109,7 +119,7 @@ struct AccountsList: View {
                         .padding([.bottom] ,9)
                         .hSpacing(.leading)
                         .vSpacing(.bottom)
-                        .foregroundColor( timer < 10 ? .red : .green)
+                        .foregroundColor( remainingTime < 10 ? .red : .green)
                 }
                 .padding([.horizontal , .vertical] ,15)
                 .background(.background.opacity(0.75) , in: .rect)
@@ -125,32 +135,23 @@ struct AccountsList: View {
     func TimerView (_ size: CGSize) -> some View {
         VStack {
             HStack(spacing:4) {
-                FlickerClockView(value: .constant(count / 10), size: CGSize(width: size.width, height: size.height), fontSize: 70, cornerRadius: 10, foreground: .white, background: timer < 10 ? .red.opacity(0.85) : .green.opacity(0.85))
+                FlickerClockView(value: .constant(remainingTime / 10), size: CGSize(width: size.width, height: size.height), fontSize: 70, cornerRadius: 10, foreground: .white, background: remainingTime < 10 ? .red.opacity(0.85) : .green.opacity(0.85))
                 FlickerClockView(
-                    value: .constant(count % 10 ),
+                    value: .constant(remainingTime % 10 ),
                     size: CGSize(width: size.width, height: size.height),
                     fontSize: 70,
                     cornerRadius: 10,
                     foreground: .white,
-                    background: timer < 10 ? .red.opacity(0.85)  : .green.opacity(0.85)
+                    background: remainingTime < 10 ? .red.opacity(0.85)  : .green.opacity(0.85)
                 )
             }
             .onAppear(){
-                generateNewCodes()
+                self.startTimer()
             }
-            .onReceive(Timer.publish(every: 0.01, on: .current, in:.common).autoconnect(), perform: { _ in
-               
-                
-                timer -= 0.01
-                
-                if timer <= 0 {
-                    timer = 31
-                    generateNewCodes()
-                }
-                count = Int(timer)
-                
-            })
-           
+            .onDisappear {
+                self.stopTimer()
+            }
+
         }
     }
     
@@ -184,18 +185,21 @@ struct AccountsList: View {
         let scale = (min(max(progress ,0),1)) * 0.3
         return 1 + scale
     }
+    
     func generateNewCodes (){
-        sampleCodes = sampleCodes.map { codeObj in
-            var updatedCode = codeObj
-            if let otp = testOtp(codeObj.code) {
-                updatedCode.otp = otp
-            }
-            return updatedCode
-        }
-        
-        sampleCodes.forEach { code in
-            print("Title: \(code.title), OTP: \(code.otp)")
-        }
+        DispatchQueue.global(qos: .utility).async {
+                   let updatedCodes = sampleCodes.map { codeObj in
+                       var updatedCode = codeObj
+                       if let otp = testOtp(codeObj.code) {
+                           updatedCode.otp = otp
+                       }
+                       return updatedCode
+                   }
+                   
+                   DispatchQueue.main.async {
+                       sampleCodes = updatedCodes
+                   }
+               }
 
 
         
@@ -214,7 +218,6 @@ struct AccountsList: View {
 }
 
 extension View {
-    
     var safeArea:UIEdgeInsets {
         if let windowScene = (UIApplication.shared.connectedScenes.first as?   UIWindowScene ){
             return windowScene.keyWindow?.safeAreaInsets ?? .zero
